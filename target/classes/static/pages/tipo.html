@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Start Page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+
+<body data-ng-app="tipoServico">
+	<h1>Tipo Documento</h1>
+	<script type="text/javascript" src="../js/angular.min.js"></script>
+	<script type="text/javascript" src="../ctrl/tipo.js"></script>
+	<form>
+		<div data-ng-controller="tipoControlle">
+
+			<label for="assunt">Descricao: </label> <input type="text"
+				id="assunt" data-ng-model="tipoDoc.tipo"><br>
+
+			<button type="button" data-ng-click="create(tipo)">Salvar</button>
+			<table border="1">
+				<tr>
+					<th>Descricao</th>
+				</tr>
+				<tr data-ng-repeat="tipo in tipos">
+					<td>{{tipo.tipo}}</td>
+					<td>
+						<button type="button" data-ng-click="alterar(tipo)">Alterar</button>
+						<button type="button" data-ng-click="deletar(tipo)">Excluir</button>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</body>
+
+
+</html>

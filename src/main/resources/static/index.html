@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="bancoo">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/modern.min.css">
+<link rel="stylesheet" type="text/css" href="css/fieldset.css">
+
+
+<title>JSF -> AngularJS</title>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/angular-route.min.js"></script>
+<script type="text/javascript" src="rotas.js"></script>
+
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="ctrl/bancoCtrl.js"></script>
+<script type="text/javascript" src="ctrl/classeCtrl.js"></script>
+<script type="text/javascript" src="ctrl/alunoCrtl.js"></script>
+
+<script type="text/javascript" src="ctrl/turmaCtrl.js"></script>
+<script type="text/javascript" src="service/turmaService.js"></script>
+<script type="text/javascript" src="service/alunoService.js"></script>
+
+
+<script type="text/javascript" src="ctrl/adiantado.js"></script>
+<script type="text/javascript" src="ctrl/adiantadoReport.js"></script>
+
+
+
+<script type="text/javascript" src="ctrl/tabelaCtrl.js"></script>
+<script type="text/javascript" src="service/adiantadoService.js"></script>
+<script type="text/javascript" src="service/ClasseService.js"></script>
+
+
+<script type="text/javascript" src="service/bancoService.js"></script>
+<script type="text/javascript" src="service/tabelaService.js"></script>
+
+
+</head>
+
+<body class="container">
+	<a href="#/aluno" class="btn btn-link">Aluno</a>
+	<a href="pages/tipo.html" class="btn btn-link">Tipo</a>
+	<a href="pages/fatura.html" class="btn btn-link">Fatura</a>
+	<a href="#/adiantadoo" class="btn btn-link">Adiantamento</a>
+
+	<a href="#/adiantadoReport" class="btn btn-link">Relatorios</a>
+	<a href="#/bancoa" class="btn btn-danger">Bancos</a>
+		<a href="#/classe" class="btn btn-danger">Classes</a>
+		<a href="#/turma" class="btn btn-link">Turmas</a>
+	
+
+	<ng-view></ng-view>
+
+</body>
+
+</html>

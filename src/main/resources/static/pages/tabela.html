@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Start Page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+
+<body>
+	<h2>Lista</h2>
+	<form>
+		<table border="1">
+			<tr>
+				<th>Nome Banco</th>
+			</tr>
+			<tr data-ng-repeat="banco in bancos">
+				<td>{{banco.descricao}}</td>
+				<td><a href="#/bancoa/{{banco.id}}" class="btn btn-link">Altera</a>
+					<button type="button" data-ng-click="deletar(banco)">Excluir</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+
+
+</html>

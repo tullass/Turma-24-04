@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Start Page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../css/modern.min.css">
+
+
+
+
+</head>
+
+<body>
+	<h4>Pagamentos Adiantados</h4>
+	<a href="#/adiantadoReport" class="btn btn-link">Report</a>
+
+
+
+
+	<br>
+	<br>
+	<br>
+
+	<div>
+
+		<form>
+
+			<div>
+
+				<label for="assunt">Servico: </label> <select
+					data-ng-model=fatura.tipo.id>
+					<option value=""></option>
+					<option data-ng-repeat="fatura in tipos" value="{{fatura.id}}">{{fatura.tipo}}</option>
+				</select> <label for="assunt">No.: </label> <input type="text" id="assunt"
+					readonly="readonly" data-ng-model="fatura.tipo.id" /> <label>Data:
+				</label> {{time| date: 'dd/MM/yyyy'}}<br>Aluno<input type="text"
+					ng-model="fatura.aluno.nome" readonly="readonly">Codigo<input
+					type="text" ng-model="fatura.aluno.id" readonly="readonly">
+				<button type="button" class="btn btn-link m-b-sm" style="color: red"
+					data-toggle="modal" data-target="#myModal">Buscar</button>
+				<br> <br> <br> A Receber<input type="text"
+					ng-model="fatura.aluno.nivel.valor" readonly="readonly"><br>
+				<br> <br> <br> <label>Prestacao</label> <select
+					data-ng-model="fatura.prestacao">
+					<option value=""></option>
+					<option data-ng-repeat="fatura in prestacao"
+						value="{{fatura.valuei}}">{{fatura.nome}}</option>
+				</select><br> <br> <br>Inicio Pagamento<input type="date"
+					ng-model="fatura.datainicio"> <br> <br>Fim
+				Pagamento<input type="date" ng-model="fatura.datafim"> <br>
+				<br>
+				<button ng-click="cal()" class="btn btn-default">Calculate</button>
+aaa {{fatura.multa}}
+
+				<br> <br> <br> Valor Total: <input type="text"
+					ng-model="fatura.caixa" readonly="readonly"> <br> <br>
+				<button ng-click="add(fatura)" class="btn btn-danger">salvar</button>
+				<br>
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+					aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal"
+									aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+								<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+							</div>
+							<div class="modal-body">
+								<input type="text" data-ng-model="pesquisa"
+									placeholder="Pesquisa"><br> <br> <br>
+								<table class="table table-hover">
+									<tr>
+										<th>Nome</th>
+										<th>Turma</th>
+										<th>Turno</th>
+										<th>Accoes</th>
+									</tr>
+									<tr
+										data-ng-repeat="aluno in alunos  | filter:pesquisa track by aluno.id">
+
+										<td>{{aluno.nome}}</td>
+										<td>{{aluno.localidade}}</td>
+										<td>{{aluno.morada}}</td>
+										<td>
+
+
+											<button type="submit" id="add-row" data-dismiss="modal"
+												data-ng-click="alterar(aluno)" class="btn btn-default">add</button>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<div class="modal-footer">
+								<button type="submit" id="add-row" data-dismiss="modal"
+									class="btn btn-success">Fechar</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</form>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+
+<meta charset="utf-8">
+
+<body>
+	<h1>Aluno</h1>
+
+	<form>
+		<div>
+			<div class="row">
+
+				<fieldset class="scheduler-border">
+					<legend class="scheduler-border">Dados Pessoais</legend>
+					<div class="form-group col-md-2">
+						<label for="assunt">Nome: </label> <input type="text" id="assunt"
+							data-ng-model="aluno.nome" class="form-control">
+					</div>
+
+					<div class="form-group col-md-2">
+
+						<label for="assunt">Apelido: </label> <input type="text"
+							id="assunt" data-ng-model="aluno.apelido" class="form-control">
+					</div>
+				</fieldset>
+				<br>
+			</div>
+			<fieldset class="scheduler-border">
+
+				<legend class="scheduler-border">Endereco</legend>
+				<div class="form-group col-md-4">
+
+					<label for="assunt">Pronvicia: </label> <select
+						class="form-control" data-ng-model="aluno.endereco.provincia">
+						<option value=""></option>
+						<option data-ng-repeat="p in pronvicias">{{p}}</option>
+					</select>
+				</div>
+				<div class="form-group col-md-4">
+
+					<label for="assunt">Distrito: </label> <input type="text"
+						id="assunt" data-ng-model="aluno.endereco.distrito"
+						class="form-control">
+				</div>
+				<div class="form-group col-md-4">
+
+					<label for="assunt">Localidade: </label> <input type="text"
+						id="assunt" data-ng-model="aluno.endereco.localidade"
+						class="form-control">
+				</div>
+				<div class="form-group col-md-4">
+
+					<label for="assunt">Bairro: </label> <input type="text" id="assunt"
+						data-ng-model=aluno.endereco.bairro class="form-control">
+				</div>
+				<div class="form-group col-md-4">
+
+					<label for="assunt">Quarteirão:: </label> <input type="text"
+						id="assunt" data-ng-model="aluno.endereco.quarterao"
+						class="form-control">
+				</div>
+				<div class="form-group col-md-4">
+
+					<label for="assunt">N° Casa: </label> <input type="text"
+						id="assunt" data-ng-model="aluno.endereco.casa"
+						class="form-control">
+				</div>
+			</fieldset>
+			<br>
+			<fieldset class="scheduler-border">
+				<legend class="scheduler-border">Associados</legend>
+				<h3>Dados Paternais</h3>
+				<div class="row">
+					<div class="form-group col-md-4">
+
+						<label for="assunt">Nome do Pai: </label> <input type="text"
+							id="assunt" data-ng-model="aluno.encaregado.nomepai"
+							class="form-control">
+					</div>
+					<div class="form-group col-md-4">
+
+						<label for="assunt">Profissao: </label> <input type="text"
+							id="assunt" data-ng-model="aluno.encaregado.profissaopai"
+							class="form-control">
+					</div>
+					<div class="form-group col-md-4">
+
+						<label for="assunt">Telefone: </label> <input type="number"
+							id="assunt" data-ng-model="aluno.encaregado.telefonepai"
+							class="form-control">
+					</div>
+					<div class="form-group col-md-4">
+
+						<label for="assunt">Email: </label> <input type="text" id="assunt"
+							data-ng-model="aluno.encaregado.emailpai" class="form-control">
+					</div>
+				</div>
+
+				<br>
+				<h3>Dados Maternais</h3>
+
+				<div class="form-group col-md-4">
+
+					<label for="assunt">Nome do Mae: </label> <input type="text"
+						id="assunt" data-ng-model="aluno.encaregado.nomemae"
+						class="form-control">
+				</div>
+				<div class="form-group col-md-4">
+
+					<label for="assunt">Profissao: </label> <input type="text"
+						id="assunt" data-ng-model="aluno.encaregado.profissaomae"
+						class="form-control">
+				</div>
+				<div class="form-group col-md-4">
+
+					<label for="assunt">Email: </label> <input type="text" id="assunt"
+						data-ng-model="aluno.encaregado.emailmae" class="form-control">
+				</div>
+				<div class="form-group col-md-4">
+
+					<label for="assunt">Telefone: </label> <input type="number"
+						id="assunt" data-ng-model="aluno.encaregado.telefonemae"
+						class="form-control">
+				</div>
+				<br>
+			</fieldset>
+			<br>
+			<fieldset class="scheduler-border">
+				<legend class="scheduler-border">Administrativos</legend>
+
+			</fieldset>
+			<br>
+		</div>
+
+		<button type="button" data-ng-click="create(aluno)">Salvar</button>
+		<br> <br> <br>
+		<table>
+			<tr>
+				<th>Nome</th>
+				<th>Localidade</th>
+				<th>Morada</th>
+
+			</tr>
+			<tr data-ng-repeat="aluno in alunos track by aluno.id">
+				<td>{{aluno.nome}}</td>
+				<td>{{aluno.morada}}</td>
+
+				<td>
+					<button type="button" data-ng-click="alterar(aluno)">Alterar</button>
+					<button type="button" data-ng-click="deletar(aluno)">Excluir</button>
+				</td>
+			</tr>
+		</table>
+		</div>
+	</form>
+</body>
